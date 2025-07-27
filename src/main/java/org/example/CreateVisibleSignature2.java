@@ -595,8 +595,8 @@ public class CreateVisibleSignature2 extends CreateSignatureBase
         KeyStore keyStore = generateSelfSignedCertificate(alias, password);
 
 
-        String inPath = "sample-local-pdf.pdf";
-        String signatureImage = "signature.png";
+        String inPath = "input/sample-local-pdf.pdf";
+        String signatureImage = "input/signature.png";
         var externallySign = true;
         File destFile;
 
@@ -604,7 +604,7 @@ public class CreateVisibleSignature2 extends CreateSignatureBase
         Rectangle2D humanRect = new Rectangle2D.Float(200, 200, 150, 50);
         signing.setImageFile(new File(signatureImage));
         signing.setExternalSigning(externallySign);
-        destFile = new File("signed_visible_test3.pdf");
+        destFile = new File("output/signed_visible_test3.pdf");
         signing.signPDF(new File(inPath), destFile, humanRect, null);
 
     }
